@@ -87,7 +87,15 @@ def empty_filter(list1):
 
 def linear_merge(list1, list2):
     # your code here
-    return
+    final_list = []
+    while len(list1) > 0 and len(list2) > 0:
+        if list1[0] < list2[0]:
+            final_list.append(list1.pop(0))
+        else:
+            final_list.append(list2.pop(0))
+    final_list.extend(list1)
+    final_list.extend(list2)
+    return final_list
 
 
 # Provided simple test() function used in main() to print
